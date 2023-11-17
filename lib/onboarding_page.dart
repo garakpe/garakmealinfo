@@ -57,7 +57,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           flex: 1,
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(
-                                10.0, 50.0, 10.0, 0.0),
+                                10.0, 20.0, 10.0, 0.0),
                             child: Column(
                               children: [
                                 Container(
@@ -85,7 +85,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                           ),
                         ),
                         Expanded(
-                          flex: 3,
+                          flex: 4,
                           child: Column(
                             children: [
                               Padding(
@@ -95,7 +95,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                   item.title,
                                   style: Theme.of(context)
                                       .textTheme
-                                      .titleLarge
+                                      .titleMedium
                                       ?.copyWith(
                                         fontWeight: FontWeight.bold,
                                         color: item.textColor,
@@ -121,15 +121,17 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                                   'Error: ${snapshot.error}');
                                             } else {
                                               return SizedBox(
-                                                width: 300,
+                                                width: 300, height: 190,
                                                 child: Center(
-                                                  child: Text(
-                                                    '${snapshot.data}',
-                                                    style: const TextStyle(
-                                                      fontSize: 20.0,
-                                                      fontWeight:
-                                                          FontWeight.w800,
-                                                      color: Colors.white,
+                                                  child: SingleChildScrollView(
+                                                    child: Text(
+                                                      '${snapshot.data}',
+                                                      style: const TextStyle(
+                                                        fontSize: 20.0,
+                                                        fontWeight:
+                                                            FontWeight.w800,
+                                                        color: Colors.white,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
